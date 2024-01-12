@@ -9,7 +9,16 @@
 </head>
 <body>
 
-    <h1>Home Page</h1>
+    <h1>Random Users</h1>
+
+    <ul>
+        {% for user in context.users %}
+            <li>
+                <img src={{ user.image }}>
+                <p>{{ user.first }} {{ user.last }}</p>
+            </li>
+        {% endfor %}
+    </ul>
     
 </body>
 </html>

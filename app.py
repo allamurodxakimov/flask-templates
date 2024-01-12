@@ -1,6 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import os
+from randomuser import randomusers
 
 
 app = Flask(__name__)
@@ -8,9 +9,12 @@ app = Flask(__name__)
 @app.route('/')
 def home():
 
-    title = 'Bosh Sahifa'
+    params = request.args
 
-    return render_template('index.html', context={'title': title})
+    title = 'Random Users'
+    users = randomusers(params['n'], params['gender'])
+
+    return render_template('index.html', context={'title': title, 'users': users})
 
 
 if __name__ == '__main__':
