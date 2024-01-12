@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 from randomuser import randomusers
 
+load_dotenv()
 
 app = Flask(__name__)
 
