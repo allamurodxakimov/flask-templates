@@ -13,7 +13,9 @@ def randomusers(n: int, gender: str) -> list[dict]:
             users.append({
                 'first': user['name']['first'],
                 'last': user['name']['last'],
-                'image': user['picture']['large']
+                'image': user['picture']['large'],
+                'email':user['email'],
+                'phone':user['phone']
             })
 
         return users

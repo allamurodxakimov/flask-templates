@@ -6,6 +6,7 @@
     {% else %}
         <title> Home Page </title>
     {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
 
@@ -15,10 +16,14 @@
         {% for user in context.users %}
             <li>
                 <img src={{ user.image }}>
-                <p>{{ user.first }} {{ user.last }}</p>
+                <p>Ism: {{ user.first }}<br>
+                    Familya: {{ user.last }}<br>
+                    Email: {{ user.email }}<br>
+                    Phone: {{ user.phone }}
+                </p>
             </li>
         {% endfor %}
     </ul>
-    
+    <a href="{{ url_for('about') }}">About</a>
 </body>
 </html>

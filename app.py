@@ -18,5 +18,10 @@ def home():
     return render_template('index.html', context={'title': title, 'users': users})
 
 
+@app.route('/about')
+def about():
+    return "Hello about"
+
+
 if __name__ == '__main__':
     app.run(debug=os.getenv('DEBUG'), port=os.getenv('PORT'))
